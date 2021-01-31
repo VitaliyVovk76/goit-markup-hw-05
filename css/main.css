@@ -533,6 +533,40 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.card-list-thumb{
+  position: relative;
+  overflow: hidden;
+}
+
+.card-list-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-list-link:hover .card-list-overlay,
+.card-list-link:focus .card-list-overlay{
+  transform: translateY(0);
+}
+
+.card-technocryk-text{
+
+font-weight: 400;
+font-size: 18px;
+line-height: 1.56;
+
+color: var(--primary-white-color);
+}
+
 .card-list-info {
   padding-top: 20px;
   padding-bottom: 20px;
