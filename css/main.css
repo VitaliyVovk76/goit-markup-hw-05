@@ -50,9 +50,8 @@ img {
   text-decoration: none;
   cursor: pointer;
 
-  transition-property: background-color, color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
@@ -133,9 +132,8 @@ img {
   color: var(--title-color);
   background-color: var(--background-secondary-color);
 
-  transition-property: background-color, color;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.secondary:hover,
@@ -450,9 +448,8 @@ img {
 
   color: var(--soc-link-primary-color);
 
-  transition-property: background-color, color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-btn:hover,
@@ -481,9 +478,8 @@ img {
   height: 90px;
   color: var(--soc-link-primary-color);
 
-  transition-property: color, border;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-btn:hover,
@@ -534,9 +530,7 @@ img {
 .card-list-link {
   display: block;
 
-  transition-property: box-shadow;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-list-link:hover,
@@ -560,9 +554,7 @@ img {
 
   background-color: rgba(33, 150, 243, 0.9);
 
-  transition-property: transform;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-list-link:hover .card-list-overlay,
@@ -692,8 +684,7 @@ img {
   height: 1024px;
   background-color: rgba(0, 0, 0, 0.2);
 
-  opacity: 1;
-  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-backdrop.is-hidden{
@@ -703,12 +694,14 @@ img {
 
 .hero-modal-window {
   position: absolute;
-  display: flex;
-  width: 528px;
-  height: 581px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
+  display: flex;
+  width: 528px;
+  height: 581px;
+  
   border-radius: 4px;
 
   background-color: var(--primary-white-color);
