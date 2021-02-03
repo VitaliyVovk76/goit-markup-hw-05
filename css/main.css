@@ -49,8 +49,10 @@ img {
 .link {
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
 .address {
@@ -130,8 +132,10 @@ img {
   text-align: center;
   color: var(--title-color);
   background-color: var(--background-secondary-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: background-color, color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.secondary:hover,
@@ -147,6 +151,9 @@ img {
 /* BUTTON END */
 
 /* HEADER */
+.header{
+  position: relative;
+}
 
 .header .container {
   display: flex;
@@ -268,6 +275,7 @@ img {
 }
 
 .overlay {
+  
   max-width: 1600px;
   height: 600px;
   margin: 0 auto;
@@ -426,8 +434,6 @@ img {
 
 .social-link-list {
   display: flex;
-
-  /* justify-content: space-between; */
 }
 
 .social-link-item:not(:last-child) {
@@ -443,8 +449,10 @@ img {
   border-radius: 50%;
 
   color: var(--soc-link-primary-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
 .social-link-btn:hover,
@@ -472,8 +480,10 @@ img {
   width: 170px;
   height: 90px;
   color: var(--soc-link-primary-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: color, border;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-btn:hover,
@@ -523,8 +533,10 @@ img {
 
 .card-list-link {
   display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
+  transition-property: box-shadow;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-list-link:hover,
@@ -533,38 +545,37 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card-list-thumb{
+.card-list-thumb {
   position: relative;
   overflow: hidden;
 }
 
-.card-list-overlay{
+.card-list-overlay {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
   padding: 63px 24px;
 
-
   background-color: rgba(33, 150, 243, 0.9);
 
-  transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-list-link:hover .card-list-overlay,
-.card-list-link:focus .card-list-overlay{
-  transform: translateY(0);
+.card-list-link:focus .card-list-overlay {
+  transform: translateY(-100%);
 }
 
-.card-technocryk-text{
+.card-technocryk-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
 
-font-weight: 400;
-font-size: 18px;
-line-height: 1.56;
-
-color: var(--primary-white-color);
+  color: var(--primary-white-color);
 }
 
 .card-list-info {
@@ -671,3 +682,63 @@ color: var(--primary-white-color);
 }
 
 /* FOOTER END*/
+
+/*HERO MODAL WINDOW */
+.hero-backdrop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1024px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-modal-window {
+  position: absolute;
+  display: flex;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.hero-modal-btn{
+  
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 8px;
+  margin-top: 8px;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-btn-img{
+  fill: black;
+}
+
+.hero-backdrop.is-hidden{
+  opacity: 0; 
+  pointer-events: none;
+}

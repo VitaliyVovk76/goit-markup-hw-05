@@ -60,9 +60,21 @@
     <main>
         <!-- Герой -->
         <section class="hero overlay">
+            
             <h1 class="hero-title">Эффективные решения<br> для вашего бизнеса</h1>
-            <button class="button primary" type="button">Заказать услугу</button>
+            <button class="button primary" type="button" data-modal-open>Заказать услугу</button>
+            <div class="hero-backdrop is-hidden" data-modal>
+                <div class="hero-modal-window">
+                    <button class="hero-modal-btn" type="button" data-modal-close>
+                        <svg class="modal-btn-img" width='11' height='11'>
+                            <use href="./images/sprite-1.svg#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </section>
+
+        
 
         <!--Выгоды от сотрудничества  -->
         <section class="feature section-padding">
@@ -425,6 +437,8 @@
 
         </div>
     </footer>
+
+    <script src="./js/modal.js"></script>
 
 </body>
 
