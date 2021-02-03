@@ -51,7 +51,7 @@ img {
   cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
@@ -133,7 +133,7 @@ img {
   background-color: var(--background-secondary-color);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.secondary:hover,
@@ -149,7 +149,7 @@ img {
 /* BUTTON END */
 
 /* HEADER */
-.header{
+.header {
   position: relative;
 }
 
@@ -273,7 +273,6 @@ img {
 }
 
 .overlay {
-  
   max-width: 1600px;
   height: 600px;
   margin: 0 auto;
@@ -449,7 +448,7 @@ img {
   color: var(--soc-link-primary-color);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-btn:hover,
@@ -479,7 +478,7 @@ img {
   color: var(--soc-link-primary-color);
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-btn:hover,
@@ -676,20 +675,25 @@ img {
 /* FOOTER END*/
 
 /*HERO MODAL WINDOW */
-.hero-backdrop{
+.hero-backdrop {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 1024px;
   background-color: rgba(0, 0, 0, 0.2);
-
+  z-index: 1;
+  opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-backdrop.is-hidden{
+.hero-backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.hero-backdrop.is-hidden .hero-modal-window {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .hero-modal-window {
@@ -697,20 +701,21 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
   display: flex;
   width: 528px;
   height: 581px;
-  
   border-radius: 4px;
 
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50% -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-modal-btn{
-  
+.hero-modal-btn {
   display: inline-flex;
 
   align-items: center;
@@ -727,11 +732,11 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.modal-btn-img{
+.modal-btn-img {
   fill: black;
 }
 
-.hero-backdrop.is-hidden{
-  opacity: 0; 
+.hero-backdrop.is-hidden {
+  opacity: 0;
   pointer-events: none;
 }
